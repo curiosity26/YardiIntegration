@@ -1,0 +1,96 @@
+<?php
+
+function YardiIntegration_schema() {
+  $schema = array(
+    'yardi_settings' => array(
+      'fields' => array(
+        'ysid' => array(
+          'type' => 'serial',
+          'unsigned int' => TRUE,
+          'not null' => TRUE
+        ),
+        'label' => array(
+          'type' => 'varchar',
+          'length' => 50,
+          'not null' => TRUE
+        ),
+        'machine_name' => array(
+          'type' => 'varchar',
+          'length' => 50,
+          'not null' => TRUE
+        ),
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE
+        ),
+        'dbusername' => array(
+          'type' => 'varchar',
+          'length' => 50,
+          'not null' => TRUE
+        ),
+        'dbpassword' => array(
+          'type' => 'varchar',
+          'length' => 50,
+          'not null' => TRUE
+        ),
+        'dbname' => array(
+          'type' => 'varchar',
+          'length' => 25,
+          'not null' => TRUE
+        ),
+        'server' => array(
+          'type' => 'varchar',
+          'length' => 25,
+          'not null' => TRUE
+        ),
+        'platform' => array(
+          'type' => 'varchar',
+          'length' => 25,
+          'not null' => TRUE,
+          'default' => 'SQL Server'
+        ),
+        'propertycode' => array(
+          'type' => 'varchar',
+          'length' => 8,
+          'not null' => TRUE
+        ),
+        'SourceName' => array(
+          'type' => 'varchar',
+          'length' => 50,
+          'not null' => TRUE
+        )
+      ),
+      'primary key' => array(
+        'ysid'
+      )
+    ),
+    'yardi_webform' => array(
+      'fields' => array(
+        'yid' => array(
+          'type' => 'serial',
+          'unsigned int' => TRUE,
+          'not null' => TRUE
+        ),
+        'nid' => array(
+          'type' => 'int',
+          'unsigned int' => TRUE,
+          'not null' => TRUE
+        ),
+        'ysid' => array(
+          'type' => 'int',
+          'unsigned int' => TRUE,
+          'not null' => TRUE
+        )
+      ),
+      'primary key' => array(
+        'yid'
+      ),
+      'unique keys' => array(
+        'nid_ysid' => array('nid', 'ysid')
+      )
+    )
+  );
+
+  return $schema;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "SageAge/Yardi",
+  "description": "A PHP SOAP interface to Yardi CMS",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Alex Boyce",
+      "email": "alex@sageagestrategies.com"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "4.3.5"
+  }
+}

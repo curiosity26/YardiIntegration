@@ -1,0 +1,7 @@
+name = Yardi Integration
+description = Extends the Yardi API to Drupal and Webforms
+package = Sage Age
+configure = admin/config/services/yardi
+core = 7.x
+
+dependencies[] = webform
